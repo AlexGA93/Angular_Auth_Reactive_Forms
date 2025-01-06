@@ -1,0 +1,81 @@
+<form 
+    autocomplete="off"
+    [formGroup]="registerForm"
+    (ngSubmit)="onSubmit()"
+    class="register-form py-3 px-6 flex flex-column justify-content-around">
+    <!-- username -->
+    <label class="mb-2" for="email">Username</label>
+    <input 
+        pInputText
+        formControlName="username" 
+        class="my-2" 
+        placeholder="User name..." 
+        type="text" 
+        id="username">
+    <span *ngIf="isValidField('username')" class="form-text text-danger"><strong>{{ getFieldError('username') | titlecase  }}</strong></span>
+    <!-- email -->
+    <label class="mb-2" for="email">Email</label>
+    <input 
+        pInputText
+        formControlName="email" 
+        class="my-2" 
+        placeholder="User email..." 
+        type="email" 
+        id="email">
+    <span *ngIf="isValidField('email')" class="form-text text-danger"><strong>{{ getFieldError('email') | titlecase  }}</strong></span>
+    <!-- password -->
+    <label class="mb-2" for="password">Password</label>
+    <input 
+        pInputText
+        formControlName="password" 
+        class="my-2" 
+        placeholder="User password..." 
+        [type]="passMode ? 'text' : 'password'" 
+        id="password">
+    <span *ngIf="isValidField('password')" class="form-text text-danger"><strong>{{ getFieldError('password') | titlecase }}</strong></span>
+    
+    <!-- confirm password -->
+    <label class="mb-2" for="password">Confirm Password</label>
+    <input 
+        pInputText
+        formControlName="password2" 
+        class="my-2" 
+        placeholder="Confirm password..." 
+        [type]="passMode ? 'text' : 'password'" 
+        id="password2">
+    <span *ngIf="isValidField('password2')" class="form-text text-danger"><strong>{{ getFieldError('password2') | titlecase }}</strong></span>
+    
+    <!-- checkbox to show password -->
+    <div class="flex flex-row align-content-center">
+        <input class="form-check-input"
+            type="checkbox"
+            id="flexSwitchCheckChecked"
+            formControlName="checked"
+            (change)="changePasswordClass()"
+            >
+        <label class="mx-2" for="flexSwitchCheckChecked">Show Password</label>
+    </div>
+    <!-- register button -->
+    <button 
+        pButton 
+        pRipple 
+        label="Register" 
+        class="my-2 p-button-success">
+    </button>
+    <!-- link to register -->
+     <p>Already an account? <strong><a routerLink="/auth/login">Log in</a></strong></p>
+</form>
+
+<shared-loader *ngIf="isLoading" class="flex justify-content-center"></shared-loader>
+<!-- <h2>Form Valid: {{ loginForm.valid }}</h2>
+<h2>Form touched: {{ loginForm.touched }}</h2>
+<h2>Form Status: {{ loginForm.status }}</h2>
+<h2>Form Pending: {{ loginForm.pending }}</h2>
+<h2>Form Errors</h2>
+<pre>{{ loginForm.errors | json }}</pre>
+
+<h5>Email</h5>
+<pre>{{ loginForm.controls['email'].errors | json }}</pre>
+
+<h5>Password</h5>
+<pre>{{ loginForm.controls['password'].errors| json }}</pre> -->
