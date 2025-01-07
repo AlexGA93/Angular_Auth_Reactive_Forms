@@ -28,6 +28,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Screenshots
 
-![register]()
+![register](https://github.com/AlexGA93/Angular_Auth_Reactive_Forms/blob/main/src/assets/pics/screenshots/Screenshot%222025-01-07_06-08-10%22.png)
 
-![login]()
+![login](https://github.com/AlexGA93/Angular_Auth_Reactive_Forms/blob/main/src/assets/pics/screenshots/Screenshot%222025-01-07_06-08-18%22.png)
